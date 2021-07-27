@@ -4,6 +4,8 @@ import ContactForm from "./ContactForm/ContactForm";
 import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
 
+import "../index.css";
+
 export default class App extends Component {
   state = {
     contacts: [
@@ -52,7 +54,7 @@ export default class App extends Component {
           onAdd={this.handelAddContact}
           onCheckUnique={this.handelCheckUniqueContact}
         />
-        <h2>Contacts List</h2>
+        <h2 className="title">Contacts List</h2>
         <Filter filter={filter} onChange={this.handelFilterChange} />
         <ContactList
           contacts={visibleContacts}

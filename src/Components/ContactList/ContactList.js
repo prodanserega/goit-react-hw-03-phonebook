@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
 
-//import s from "../ContactList/ContactList.module..css";
+import s from "../ContactList/ContactList.module.css";
 
 const ContactListItem = ({ id, name, phone, onRemove }) => {
   return (
-    <li>
-      {name}: {phone} <button onClick={() => onRemove(id)}>delete</button>
+    <li className={s.item}>
+      {name}: {phone}{" "}
+      <button className={s.button} onClick={() => onRemove(id)}>
+        delete
+      </button>
     </li>
   );
 };
@@ -13,7 +16,7 @@ const ContactListItem = ({ id, name, phone, onRemove }) => {
 const ContactList = ({ contacts, onRemove }) => {
   if (contacts.length === 0) return null;
   return (
-    <ul>
+    <ul className={s.list}>
       {contacts.map((contact) => (
         <ContactListItem {...contact} onRemove={onRemove} />
       ))}
